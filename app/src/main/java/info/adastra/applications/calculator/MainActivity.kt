@@ -117,9 +117,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun removeZeroAfterDot(result: String):String{
         var value = result
-        val resultLength = result.length
+        val resultLength = result.count()
+        var str = result.substring(resultLength-2)
 
-        if(result[resultLength - 2].equals(".")&&result[resultLength - 1].equals("0")){
+        if(str.equals(".0")){
             value = result.substring(0,result.length - 2)
         }
         return value
